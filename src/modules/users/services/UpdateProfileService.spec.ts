@@ -40,8 +40,8 @@ describe('UpdateProfile', () => {
     await expect(
       updateProfile.execute({
         user_id: 'non-existing-user-id',
-        name: 'teste',
-        email: 'teste@teste.com',
+        name: 'John teste',
+        email: 'johnteste@teste.com',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
