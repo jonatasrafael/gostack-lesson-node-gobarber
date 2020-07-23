@@ -16,11 +16,11 @@ appointmentsRouter.post(
   celebrate({
     [Segments.BODY]: {
       provider_id: Joi.string().uuid().required(),
-      date: Joi.date(),
+      date: Joi.date().iso().required(),
     },
   }),
   appointmentsController.create,
 );
-appointmentsRouter.post('/me', providerAppointmentsController.index);
+appointmentsRouter.get('/me', providerAppointmentsController.index);
 
 export default appointmentsRouter;
